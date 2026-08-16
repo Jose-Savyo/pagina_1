@@ -1,0 +1,958 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta name="description"
+        content="WIRE Tecnologia e Manufatura Inteligente — Peletizadora WR200 com capacidade de até 200 kg/h.">
+  <meta name="theme-color" content="#0d3b78">
+
+  <title>WIRE | Peletizadora WR200</title>
+
+  <link rel="icon" href="images/logo.jpg" type="image/png">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --blue: #0d3b78;
+      --blue-dark: #082957;
+      --blue-light: #1d64b7;
+      --cyan: #4da3df;
+      --text: #172033;
+      --muted: #687386;
+      --bg: #f5f7fa;
+      --white: #ffffff;
+      --border: #e4e8ef;
+      --shadow: 0 18px 45px rgba(13, 59, 120, 0.12);
+      --radius: 20px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: "Inter", Arial, sans-serif;
+      color: var(--text);
+      background: var(--bg);
+      line-height: 1.6;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      display: block;
+      max-width: 100%;
+    }
+
+    .container {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    /* =========================
+       HEADER
+    ========================== */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255, 255, 255, 0.96);
+      border-bottom: 1px solid var(--border);
+      backdrop-filter: blur(12px);
+    }
+
+    .nav {
+      min-height: 78px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .brand img {
+      width: 145px;
+      height: auto;
+    }
+
+    .menu {
+      display: flex;
+      align-items: center;
+      gap: 28px;
+      list-style: none;
+    }
+
+    .menu a {
+      font-size: 14px;
+      font-weight: 600;
+      color: #465166;
+      transition: color .2s ease;
+    }
+
+    .menu a:hover {
+      color: var(--blue-light);
+    }
+
+    .menu .menu-cta {
+      color: #fff;
+      background: var(--blue);
+      padding: 11px 18px;
+      border-radius: 10px;
+    }
+
+    .menu .menu-cta:hover {
+      color: #fff;
+      background: var(--blue-light);
+    }
+
+    /* =========================
+       HERO
+    ========================== */
+
+    .hero {
+      position: relative;
+      overflow: hidden;
+      background:
+        radial-gradient(circle at 80% 20%, rgba(77,163,223,.22), transparent 35%),
+        linear-gradient(135deg, var(--blue-dark), var(--blue));
+      color: white;
+    }
+
+    .hero::after {
+      content: "";
+      position: absolute;
+      width: 500px;
+      height: 500px;
+      right: -180px;
+      bottom: -300px;
+      border: 1px solid rgba(255,255,255,.12);
+      border-radius: 50%;
+      box-shadow:
+        0 0 0 60px rgba(255,255,255,.025),
+        0 0 0 120px rgba(255,255,255,.02);
+    }
+
+    .hero-content {
+      min-height: 550px;
+      display: grid;
+      grid-template-columns: 1fr .9fr;
+      align-items: center;
+      gap: 50px;
+      padding: 75px 0;
+    }
+
+    .hero-tag {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      margin-bottom: 18px;
+      padding: 8px 13px;
+      border: 1px solid rgba(255,255,255,.2);
+      border-radius: 999px;
+      background: rgba(255,255,255,.08);
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: .08em;
+      text-transform: uppercase;
+    }
+
+    .hero h1 {
+      max-width: 680px;
+      font-size: clamp(38px, 5vw, 64px);
+      line-height: 1.04;
+      letter-spacing: -0.04em;
+      margin-bottom: 22px;
+    }
+
+    .hero h1 span {
+      color: #78c4f1;
+    }
+
+    .hero p {
+      max-width: 610px;
+      color: rgba(255,255,255,.82);
+      font-size: 18px;
+      margin-bottom: 30px;
+    }
+
+    .hero-button {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      padding: 14px 22px;
+      border-radius: 11px;
+      background: white;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 800;
+      transition: transform .2s ease, box-shadow .2s ease;
+    }
+
+    .hero-button:hover {
+      transform: translateY(-2px);
+      box-shadow: 0 12px 25px rgba(0,0,0,.15);
+    }
+
+    .hero-machine {
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .hero-machine::before {
+      content: "";
+      position: absolute;
+      width: 390px;
+      height: 390px;
+      border-radius: 50%;
+      background: rgba(255,255,255,.07);
+    }
+
+    .hero-machine img {
+      position: relative;
+      z-index: 1;
+      width: min(470px, 100%);
+      max-height: 440px;
+      object-fit: contain;
+      filter: drop-shadow(0 25px 25px rgba(0,0,0,.22));
+    }
+
+    /* =========================
+       PRODUCTS
+    ========================== */
+
+    .products {
+      padding: 90px 0;
+      background: var(--bg);
+    }
+
+    .section-heading {
+      max-width: 760px;
+      margin: 0 auto 45px;
+      text-align: center;
+    }
+
+    .section-kicker {
+      color: var(--blue-light);
+      font-size: 13px;
+      font-weight: 800;
+      letter-spacing: .12em;
+      text-transform: uppercase;
+      margin-bottom: 8px;
+    }
+
+    .section-heading h2 {
+      font-size: clamp(30px, 4vw, 44px);
+      line-height: 1.15;
+      letter-spacing: -.035em;
+      margin-bottom: 13px;
+    }
+
+    .section-heading p {
+      color: var(--muted);
+      font-size: 16px;
+    }
+
+    .product-grid {
+      display: grid;
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+      gap: 28px;
+    }
+
+    .product-card {
+      overflow: hidden;
+      background: var(--white);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      transition: transform .25s ease, box-shadow .25s ease;
+    }
+
+    .product-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 25px 55px rgba(13, 59, 120, .17);
+    }
+
+    .product-image {
+      position: relative;
+      height: 360px;
+      overflow: hidden;
+      background: #eef2f6;
+    }
+
+    .product-image img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-badge {
+      position: absolute;
+      top: 18px;
+      left: 18px;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 12px;
+      font-weight: 800;
+      box-shadow: 0 7px 15px rgba(13,59,120,.25);
+    }
+
+    .product-content {
+      padding: 27px;
+    }
+
+    .product-content h3 {
+      font-size: 24px;
+      line-height: 1.2;
+      margin-bottom: 8px;
+    }
+
+    .product-subtitle {
+      color: var(--blue-light);
+      font-size: 13px;
+      font-weight: 800;
+      margin-bottom: 15px;
+      text-transform: uppercase;
+      letter-spacing: .05em;
+    }
+
+    .product-content p {
+      color: var(--muted);
+      font-size: 14px;
+      margin-bottom: 20px;
+    }
+
+    .specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      margin-bottom: 22px;
+    }
+
+    .spec {
+      padding: 12px;
+      border: 1px solid var(--border);
+      border-radius: 12px;
+      background: #fafbfc;
+    }
+
+    .spec strong {
+      display: block;
+      color: var(--blue);
+      font-size: 14px;
+    }
+
+    .spec span {
+      display: block;
+      color: var(--muted);
+      font-size: 11px;
+      margin-top: 2px;
+    }
+
+    .product-button {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      width: 100%;
+      padding: 14px 18px;
+      border-radius: 11px;
+      background: var(--blue);
+      color: #fff;
+      font-size: 14px;
+      font-weight: 800;
+      transition: background .2s ease, transform .2s ease;
+    }
+
+    .product-button:hover {
+      background: var(--blue-light);
+      transform: translateY(-1px);
+    }
+
+    /* =========================
+       FEATURES
+    ========================== */
+
+    .features {
+      padding: 85px 0;
+      background: #fff;
+    }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 40px;
+    }
+
+    .feature {
+      padding: 25px 20px;
+      border: 1px solid var(--border);
+      border-radius: 16px;
+      background: #fff;
+    }
+
+    .feature-icon {
+      width: 43px;
+      height: 43px;
+      display: grid;
+      place-items: center;
+      margin-bottom: 15px;
+      border-radius: 12px;
+      background: #eaf3fb;
+      color: var(--blue);
+      font-size: 20px;
+    }
+
+    .feature h3 {
+      font-size: 16px;
+      margin-bottom: 7px;
+    }
+
+    .feature p {
+      color: var(--muted);
+      font-size: 13px;
+    }
+
+    /* =========================
+       CTA
+    ========================== */
+
+    .cta {
+      padding: 75px 0;
+      background: linear-gradient(135deg, #092c5d, #0e4b91);
+      color: white;
+    }
+
+    .cta-content {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .cta h2 {
+      font-size: clamp(28px, 4vw, 40px);
+      line-height: 1.15;
+      margin-bottom: 10px;
+    }
+
+    .cta p {
+      max-width: 680px;
+      color: rgba(255,255,255,.76);
+    }
+
+    .cta-button {
+      flex-shrink: 0;
+      padding: 15px 23px;
+      border-radius: 11px;
+      background: #fff;
+      color: var(--blue);
+      font-size: 14px;
+      font-weight: 800;
+    }
+
+    /* =========================
+       FOOTER
+    ========================== */
+
+    footer {
+      padding: 35px 0;
+      background: #071d3b;
+      color: rgba(255,255,255,.65);
+    }
+
+    .footer-content {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 20px;
+    }
+
+    .footer-brand {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+    }
+
+    .footer-brand img {
+      width: 105px;
+      filter: brightness(0) invert(1);
+    }
+
+    footer p {
+      font-size: 12px;
+    }
+
+    /* =========================
+       RESPONSIVE
+    ========================== */
+
+    @media (max-width: 900px) {
+      .menu {
+        display: none;
+      }
+
+      .hero-content {
+        grid-template-columns: 1fr;
+        text-align: center;
+      }
+
+      .hero p {
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .hero-machine {
+        order: -1;
+      }
+
+      .hero-machine img {
+        max-height: 330px;
+      }
+
+      .product-grid {
+        grid-template-columns: 1fr;
+        max-width: 650px;
+        margin: 0 auto;
+      }
+
+      .feature-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .cta-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+
+    @media (max-width: 600px) {
+      .container {
+        width: min(100% - 28px, 1180px);
+      }
+
+      .nav {
+        min-height: 68px;
+      }
+
+      .brand img {
+        width: 125px;
+      }
+
+      .hero-content {
+        min-height: auto;
+        padding: 55px 0 65px;
+      }
+
+      .hero h1 {
+        font-size: 40px;
+      }
+
+      .hero p {
+        font-size: 16px;
+      }
+
+      .products,
+      .features {
+        padding: 65px 0;
+      }
+
+      .product-image {
+        height: 290px;
+      }
+
+      .product-content {
+        padding: 22px;
+      }
+
+      .feature-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .footer-content {
+        flex-direction: column;
+        text-align: center;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <div class="container nav">
+      <a href="#" class="brand" aria-label="WIRE">
+        <img src="images/logo.png" alt="WIRE Tecnologia e Manufatura Inteligente">
+      </a>
+
+      <nav>
+        <ul class="menu">
+          <li><a href="#produtos">Peletizadoras</a></li>
+          <li><a href="#vantagens">Características</a></li>
+          <li>
+            <a
+              class="menu-cta"
+              href="https://produto.mercadolivre.com.br/MLB-7296370206-peletizadora-wire-wr200-220v-monofasica-200kgh-_JM"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Comprar
+            </a>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+
+    <section class="hero">
+      <div class="container hero-content">
+
+        <div>
+          <div class="hero-tag">Lançamento WIRE · WR200</div>
+
+          <h1>
+            Produza seus próprios pellets com a
+            <span>WR200</span>.
+          </h1>
+
+          <p>
+            Peletizadora WIRE de alta capacidade para produção de pellets
+            de ração e biomassa, com capacidade de até 200 kg/h e matrizes
+            intercambiáveis.
+          </p>
+
+          <a
+            class="hero-button"
+            href="#produtos"
+          >
+            Conheça as versões →
+          </a>
+        </div>
+
+        <div class="hero-machine">
+          <!--
+            Troque este arquivo pela imagem principal da máquina.
+            Exemplo: images/peletizadora-5cv.png
+          -->
+          <img
+            src="images/peletizadora-5cv.png"
+            alt="Peletizadora WIRE WR200"
+          >
+        </div>
+
+      </div>
+    </section>
+
+
+    <section class="products" id="produtos">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-kicker">Peletizadora WIRE WR200</div>
+
+          <h2>
+            Escolha a configuração ideal para sua produção
+          </h2>
+
+          <p>
+            Duas configurações de motor para atender diferentes necessidades
+            de instalação e produção.
+          </p>
+        </div>
+
+
+        <div class="product-grid">
+
+          <!-- =========================
+               MODELO 5 CV
+          ========================== -->
+
+          <article class="product-card">
+
+            <a
+              href="https://produto.mercadolivre.com.br/MLB-7296370206-peletizadora-wire-wr200-220v-monofasica-200kgh-_JM"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver Peletizadora WIRE WR200 5 CV no Mercado Livre"
+            >
+              <div class="product-image">
+
+                <span class="product-badge">
+                  220 V · MONOFÁSICA
+                </span>
+
+                <!--
+                  Imagem enviada: versão com motor de 5 CV.
+                  Salve-a no projeto como:
+                  images/peletizadora-5cv.png
+                -->
+                <img
+                  src="images/peletizadora-5cv.png"
+                  alt="Peletizadora WIRE WR200 com motor de 5 CV monofásico 220 V"
+                  loading="lazy"
+                >
+
+              </div>
+            </a>
+
+            <div class="product-content">
+
+              <div class="product-subtitle">
+                WR200 · Configuração 01
+              </div>
+
+              <h3>
+                Motor 5 CV
+              </h3>
+
+              <p>
+                Versão monofásica em 220 V, indicada para instalações que
+                utilizam alimentação monofásica.
+              </p>
+
+              <div class="specs">
+
+                <div class="spec">
+                  <strong>200 kg/h</strong>
+                  <span>Capacidade nominal</span>
+                </div>
+
+                <div class="spec">
+                  <strong>5 CV</strong>
+                  <span>Potência do motor</span>
+                </div>
+
+                <div class="spec">
+                  <strong>220 V</strong>
+                  <span>Alimentação</span>
+                </div>
+
+                <div class="spec">
+                  <strong>5 / 6 / 8 mm</strong>
+                  <span>Matrizes</span>
+                </div>
+
+              </div>
+
+              <a
+                class="product-button"
+                href="https://produto.mercadolivre.com.br/MLB-7296370206-peletizadora-wire-wr200-220v-monofasica-200kgh-_JM"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver anúncio no Mercado Livre →
+              </a>
+
+            </div>
+          </article>
+
+
+          <!-- =========================
+               MODELO 7,5 CV
+          ========================== -->
+
+          <article class="product-card">
+
+            <a
+              href="https://produto.mercadolivre.com.br/MLB-7296370206-peletizadora-wire-wr200-220v-monofasica-200kgh-_JM"
+              target="_blank"
+              rel="noopener noreferrer"
+              aria-label="Ver Peletizadora WIRE WR200 7,5 CV no Mercado Livre"
+            >
+              <div class="product-image">
+
+                <span class="product-badge">
+                  380 V · TRIFÁSICA
+                </span>
+
+                <!--
+                  Imagem enviada: versão com motor de 7,5 CV.
+                  Salve-a no projeto como:
+                  images/peletizadora-7-5cv.png
+                -->
+                <img
+                  src="images/peletizadora-7-5cv.png"
+                  alt="Peletizadora WIRE WR200 com motor de 7,5 CV trifásico 380 V"
+                  loading="lazy"
+                >
+
+              </div>
+            </a>
+
+            <div class="product-content">
+
+              <div class="product-subtitle">
+                WR200 · Configuração 02
+              </div>
+
+              <h3>
+                Motor 7,5 CV
+              </h3>
+
+              <p>
+                Versão trifásica em 380 V, indicada para instalações
+                industriais com alimentação trifásica.
+              </p>
+
+              <div class="specs">
+
+                <div class="spec">
+                  <strong>200 kg/h</strong>
+                  <span>Capacidade nominal</span>
+                </div>
+
+                <div class="spec">
+                  <strong>7,5 CV</strong>
+                  <span>Potência do motor</span>
+                </div>
+
+                <div class="spec">
+                  <strong>380 V</strong>
+                  <span>Alimentação</span>
+                </div>
+
+                <div class="spec">
+                  <strong>5 / 6 / 8 mm</strong>
+                  <span>Matrizes</span>
+                </div>
+
+              </div>
+
+              <a
+                class="product-button"
+                href="https://produto.mercadolivre.com.br/MLB-7296370206-peletizadora-wire-wr200-220v-monofasica-200kgh-_JM"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                Ver anúncio no Mercado Livre →
+              </a>
+
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="features" id="vantagens">
+      <div class="container">
+
+        <div class="section-heading">
+          <div class="section-kicker">Tecnologia WIRE</div>
+
+          <h2>
+            Uma máquina pensada para produção
+          </h2>
+
+          <p>
+            A WR200 combina construção robusta, flexibilidade de aplicação
+            e facilidade de operação.
+          </p>
+        </div>
+
+
+        <div class="feature-grid">
+
+          <div class="feature">
+            <div class="feature-icon">⚙</div>
+            <h3>Até 200 kg/h</h3>
+            <p>
+              Alta capacidade para diferentes aplicações de peletização.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">◉</div>
+            <h3>Matrizes intercambiáveis</h3>
+            <p>
+              Opções de 5, 6 ou 8 mm para diferentes diâmetros de pellet.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">▣</div>
+            <h3>Ajuste de roletes</h3>
+            <p>
+              Sistema com ajuste de roletes e cortador interno.
+            </p>
+          </div>
+
+          <div class="feature">
+            <div class="feature-icon">↗</div>
+            <h3>Diversas matérias-primas</h3>
+            <p>
+              Aplicações com milho, farelo, grama, palha, sorgo, soja e outros materiais.
+            </p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+
+    <section class="cta">
+      <div class="container cta-content">
+
+        <div>
+          <h2>Quer conhecer a WR200?</h2>
+          <p>
+            Acesse nosso anúncio no Mercado Livre e confira as condições
+            de compra da Peletizadora WIRE.
+          </p>
+        </div>
+
+        <a
+          class="cta-button"
+          href="https://produto.mercadolivre.com.br/MLB-7296370206-peletizadora-wire-wr200-220v-monofasica-200kgh-_JM"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          Ver anúncio →
+        </a>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer>
+    <div class="container footer-content">
+
+      <div class="footer-brand">
+        <img src="images/logo.png" alt="WIRE">
+        <p>
+          Tecnologia e Manufatura Inteligente
+        </p>
+      </div>
+
+      <p>
+        © 2026 WIRE. Todos os direitos reservados.
+      </p>
+
+    </div>
+  </footer>
+
+</body>
+</html>
